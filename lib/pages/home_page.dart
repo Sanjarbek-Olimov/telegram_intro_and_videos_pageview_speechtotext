@@ -1,5 +1,5 @@
-import 'package:demo_animation/pages/telegram_intro_page.dart';
-import 'package:demo_animation/pages/short_videos.dart';
+import 'package:demo_animation/pages/telegram_intro/telegram_intro_page.dart';
+import 'package:demo_animation/pages/youtube_shorts/short_videos.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,7 +36,13 @@ class _HomePageState extends State<HomePage> {
               color: Colors.blue,
               onPressed: (){
               Navigator.pushNamed(context, ShortVideosPage.id);
-            }, child: Text("Short videos", style:  TextStyle(fontSize: 20, color: Colors.white),),),
+            }, child: Text("YouTube Shorts", style:  TextStyle(fontSize: 20, color: Colors.white),),),
+            SizedBox(height: 20,),
+            MaterialButton(
+              height: 50,
+              minWidth: MediaQuery.of(context).size.width*0.55,
+              color: Colors.blue,
+              onPressed: (){}, child: Text("Voice recognition", style:  TextStyle(fontSize: 20, color: Colors.white),),),
           ],
         ),
       ),

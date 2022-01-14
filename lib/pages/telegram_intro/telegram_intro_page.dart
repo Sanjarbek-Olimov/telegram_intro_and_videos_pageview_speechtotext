@@ -1,11 +1,12 @@
-import 'package:demo_animation/pages/lotties/fifth_lottie.dart';
-import 'package:demo_animation/pages/lotties/first_lottie.dart';
-import 'package:demo_animation/pages/lotties/fourth_lottie.dart';
-import 'package:demo_animation/pages/lotties/second_lottie.dart';
-import 'package:demo_animation/pages/lotties/sixth_lottie.dart';
-import 'package:demo_animation/pages/lotties/third_lottie.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+import 'lotties/fifth_lottie.dart';
+import 'lotties/first_lottie.dart';
+import 'lotties/fourth_lottie.dart';
+import 'lotties/second_lottie.dart';
+import 'lotties/sixth_lottie.dart';
+import 'lotties/third_lottie.dart';
 
 class TelegramIntroPage extends StatefulWidget {
   static const String id = "TelegramIntro_page";
