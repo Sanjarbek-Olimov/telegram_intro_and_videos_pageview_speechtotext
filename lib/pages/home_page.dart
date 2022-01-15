@@ -1,3 +1,4 @@
+import 'package:demo_animation/pages/speech_screen_page.dart';
 import 'package:demo_animation/pages/telegram_intro/telegram_intro_page.dart';
 import 'package:demo_animation/pages/youtube_shorts/short_videos.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +43,9 @@ class _HomePageState extends State<HomePage> {
               height: 50,
               minWidth: MediaQuery.of(context).size.width*0.55,
               color: Colors.blue,
-              onPressed: (){}, child: Text("Voice recognition", style:  TextStyle(fontSize: 20, color: Colors.white),),),
+              onPressed: (){
+                Navigator.pushNamed(context, SpeechScreenPage.id);
+              }, child: Text("Voice recognition", style:  TextStyle(fontSize: 20, color: Colors.white),),),
           ],
         ),
       ),

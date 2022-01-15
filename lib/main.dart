@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:demo_animation/pages/home_page.dart';
+import 'package:demo_animation/pages/speech_screen_page.dart';
 import 'package:demo_animation/pages/telegram_intro/telegram_intro_page.dart';
 import 'package:demo_animation/pages/youtube_shorts/short_videos.dart';
 import 'package:device_info/device_info.dart';
@@ -65,6 +66,7 @@ class MyApp extends StatelessWidget {
         HomePage.id: (context) => const HomePage(),
         TelegramIntroPage.id: (context) => const TelegramIntroPage(),
         ShortVideosPage.id: (context)=> const ShortVideosPage(),
+        SpeechScreenPage.id: (context) => const SpeechScreenPage()
       },
     );
   }

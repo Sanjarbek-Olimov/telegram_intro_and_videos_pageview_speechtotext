@@ -17,8 +17,9 @@ class _ShortVideosPageState extends State<ShortVideosPage> {
   int _selectedIndex = 0;
   bool isPause = false;
   bool visible = false;
-  bool _pressed = false;
-  bool _pressed1 = false;
+  bool _pressedLike = false;
+  bool _onDoubleTap = false;
+  bool _pressedDislike = false;
 
   List likes = ["260k", "120k", "523k", "65k", "5k", "546k"];
   List comment = ["10k", "18k", "12k", "2k", "312", "21k"];
@@ -88,6 +89,8 @@ class _ShortVideosPageState extends State<ShortVideosPage> {
                   if (isPause) {
                     isPause = !isPause;
                   }
+                  _pressedLike = false;
+                  _pressedDislike = false;
                 });
                 videos.elementAt(_selectedIndex).play();
               },
@@ -129,6 +132,7 @@ class _ShortVideosPageState extends State<ShortVideosPage> {
                       ),
               ),
             ),
+            _onDoubleTap?Center(child: Lottie.asset("assets/anims/like.json", repeat: false)):const SizedBox.shrink(),
           ],
         ));
   }
@@ -151,6 +155,20 @@ class _ShortVideosPageState extends State<ShortVideosPage> {
           });
         });
         isPause = !isPause;
+      },
+      onDoubleTap: (){
+        setState(() {
+          _onDoubleTap = true;
+          _pressedLike = true;
+          if(_pressedDislike){
+            _pressedDislike = !_pressedDislike;
+          }
+        });
+        Timer.periodic(Duration(milliseconds: 2000), (timer) {
+          setState(() {
+            _onDoubleTap=false;
+          });
+        });
       },
       child: Stack(
         children: [
@@ -183,14 +201,14 @@ class _ShortVideosPageState extends State<ShortVideosPage> {
                 IconButton(
                   icon: Icon(
                     Icons.thumb_up_alt,
-                    color: _pressed ? Colors.blue.shade400 : Colors.white,
+                    color: _pressedLike ? Colors.blue.shade400 : Colors.white,
                     size: 35,
                   ),
                   onPressed: () {
                     setState(() {
-                      _pressed = !_pressed;
-                      if (_pressed1) {
-                        _pressed1 = !_pressed1;
+                      _pressedLike = !_pressedLike;
+                      if (_pressedDislike) {
+                        _pressedDislike = !_pressedDislike;
                       }
                     });
                   },
@@ -205,14 +223,14 @@ class _ShortVideosPageState extends State<ShortVideosPage> {
                 IconButton(
                   icon: Icon(
                     Icons.thumb_down_alt,
-                    color: _pressed1 ? Colors.blue.shade400 : Colors.white,
+                    color: _pressedDislike ? Colors.blue.shade400 : Colors.white,
                     size: 35,
                   ),
                   onPressed: () {
                     setState(() {
-                      _pressed1 = !_pressed1;
-                      if (_pressed) {
-                        _pressed = !_pressed;
+                      _pressedDislike = !_pressedDislike;
+                      if (_pressedLike) {
+                        _pressedLike = !_pressedLike;
                       }
                     });
                   },
