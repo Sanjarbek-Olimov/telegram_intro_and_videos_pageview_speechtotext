@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-class FifthLottie extends StatefulWidget {
-  static const String id = "fifth_lottie";
+class FirtsLottie extends StatefulWidget {
+  static const String id = "first_lottie";
   String lottie;
-  FifthLottie({Key? key, required this.lottie}) : super(key: key);
+
+  FirtsLottie({Key? key, required this.lottie}) : super(key: key);
 
   @override
-  _FifthLottieState createState() => _FifthLottieState();
+  _FirtsLottieState createState() => _FirtsLottieState();
 }
 
-class _FifthLottieState extends State<FifthLottie>
+class _FirtsLottieState extends State<FirtsLottie>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -20,7 +21,7 @@ class _FifthLottieState extends State<FifthLottie>
 
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 300),
+      duration: const Duration(milliseconds: 300),
       upperBound: 1.0,
     );
     _controller.forward(from: 0.5);
@@ -35,6 +36,7 @@ class _FifthLottieState extends State<FifthLottie>
   @override
   Widget build(BuildContext context) {
     return RotationTransition(
+      key: ObjectKey(_controller.forward(from: 0.5)),
       turns: Tween(begin: 0.0, end: 1.0).animate(_controller),
       child: Lottie.asset(widget.lottie, repeat: false),
     );

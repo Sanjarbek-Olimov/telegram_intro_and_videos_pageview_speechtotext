@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
-import 'lotties/fifth_lottie.dart';
-import 'lotties/first_lottie.dart';
-import 'lotties/fourth_lottie.dart';
-import 'lotties/second_lottie.dart';
-import 'lotties/sixth_lottie.dart';
-import 'lotties/third_lottie.dart';
+import 'first_lottie.dart';
 
 class TelegramIntroPage extends StatefulWidget {
   static const String id = "TelegramIntro_page";
@@ -111,11 +105,11 @@ class _TelegramIntroPageState extends State<TelegramIntroPage>
 
   List anims = [
     FirtsLottie(lottie: "assets/anims/1_telegram.json"),
-    SecondLottie(lottie: "assets/anims/fast.json"),
-    ThirdLottie(lottie: "assets/anims/gift.json"),
-    FourthLottie(lottie: "assets/anims/infinity.json"),
-    FifthLottie(lottie: "assets/anims/lock.json"),
-    SixthLottie(lottie: "assets/anims/cloud.json"),
+    FirtsLottie(lottie: "assets/anims/fast.json"),
+    FirtsLottie(lottie: "assets/anims/gift.json"),
+    FirtsLottie(lottie: "assets/anims/infinity.json"),
+    FirtsLottie(lottie: "assets/anims/lock.json"),
+    FirtsLottie(lottie: "assets/anims/cloud.json"),
   ];
 
   @override
